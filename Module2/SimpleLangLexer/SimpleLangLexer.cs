@@ -46,7 +46,11 @@ namespace SimpleLangLexer
         LESS_OR_EQUAL,
         EQUAL,
         NOT_EQUAL,
-        COMMENT
+        COMMENT, 
+        WHILE, 
+        DO, 
+        FOR, 
+        TO
     }
 
     public class Lexer
@@ -98,6 +102,10 @@ namespace SimpleLangLexer
             keywordsMap["and"] = Tok.AND;
             keywordsMap["or"] = Tok.OR;
             keywordsMap["not"] = Tok.NOT;
+            keywordsMap["while"] = Tok.WHILE;
+            keywordsMap["do"] = Tok.DO;
+            keywordsMap["for"] = Tok.FOR;
+            keywordsMap["to"] = Tok.TO;
 
 
         }
@@ -279,7 +287,7 @@ namespace SimpleLangLexer
 
             }
             else if (currentCh == ':')
-            { 
+            {
                 NextCh();
                 if (currentCh == ' ')
                 {
